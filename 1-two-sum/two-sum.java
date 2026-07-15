@@ -7,7 +7,7 @@ class Solution {
             int req=target-curr;
 
             if(map.containsKey(req)){
-                return new int[]{i,map.get(req)};
+                return new int[]{map.get(req),i};
             }
             map.put(curr,i);
         }

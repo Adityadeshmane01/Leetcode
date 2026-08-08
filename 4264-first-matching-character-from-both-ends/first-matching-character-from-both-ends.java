@@ -1,12 +1,13 @@
 class Solution {
     public int firstMatchingIndex(String s) {
-        //  idx=-1;
+        StringBuilder str=new StringBuilder(s);
+
         int start=0;
-        int end=s.length();
+        int end=str.length();
 
         while(start<end){
-            if(s.charAt(start)==s.charAt(end-start-1)){
-               return start;
+            if(str.charAt(start)==str.charAt(end-start-1)){
+                return start;
             }
             start++;
         }

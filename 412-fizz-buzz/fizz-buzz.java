@@ -14,8 +14,7 @@ class Solution {
                 list.add("Buzz");
             }
             else{
-                String ch=Integer.toString(i);
-                list.add(ch);
+                list.add(String.valueOf(i));
             }
         }
         return list;

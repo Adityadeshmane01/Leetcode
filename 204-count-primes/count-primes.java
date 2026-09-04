@@ -1,23 +1,18 @@
 class Solution {
     public int countPrimes(int n) {
-        if(n<2){
-            return 0;
-        }
-        boolean[] isPrime =new boolean[n];
-        Arrays.fill(isPrime,true);
-        isPrime[0]=isPrime[1]=false;
-        int count=0;
-         for (int i = 0; i < n; i++) {
-            if (isPrime[i]) {
-                count++;
-                int j = i * 2;
-                while (j < n) {
-                    isPrime[j] = false;
-                    j = j + i;
+        if(n<2) return 0;
+        boolean[] isComposite = new boolean[n+1];
+        for(int i=2 ; i*i<n ; i++){
+            if(!isComposite[i]){
+                for(int j=i*i ; j<n ; j+=i){
+                    isComposite[j] = true;
                 }
             }
         }
-        
-        return count;
+        int ans = 0;
+        for(int i=2 ; i<n ; i++){
+            if(!isComposite[i]) ans++;
+        }
+        return ans;
     }
 }

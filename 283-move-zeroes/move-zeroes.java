@@ -4,8 +4,7 @@ class Solution {
 
         for(int i=0;i<nums.length;i++){
             if(nums[i]!=0){
-                nums[nonZero]=nums[i];
-                nonZero++;
+                nums[nonZero++]=nums[i];
             }
         }
         while(nonZero<nums.length){

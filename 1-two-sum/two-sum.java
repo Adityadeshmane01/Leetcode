@@ -4,13 +4,13 @@ class Solution {
 
         for(int i=0;i<nums.length;i++){
             int curr=nums[i];
-            int req=target-curr;
+            int rem=target-curr;
 
-            if(map.containsKey(req)){
-                return new int[] {i,map.get(req)};
+            if(map.containsKey(rem)){
+                return new int[] {i,map.get(rem)};
             }
             map.put(curr,i);
         }
-        return new int[]{-1,-1};
+        return new int[] {-1,-1};
     }
 }
